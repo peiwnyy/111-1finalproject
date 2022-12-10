@@ -92,16 +92,11 @@ for i in category:
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
-    for i in category_lst:
-        if re.match(i,message):
-            line_bot_api.reply_message(event.reply_token,TextSendMessage('我們有：'))
-            for j in menu:
-                if j[2] == message
-                line_bot_api.reply_message(event.reply_token,TextSendMessage(i[0]))
-    for i in menu:
-        if re.match(i[0],message):
-            rely_of_kcal = '您選的餐點是'+i[0]+'，這項餐點的熱量為'+i[1]+'大卡'
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(rely_of_kcal))
+    if re.match('告訴我秘密',message):
+        line_bot_api.reply_message(event.reply_token,TextSendMessage('才不告訴你哩！'))
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
+
 #主程式
 import os
 if __name__ == "__main__":
