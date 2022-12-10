@@ -87,15 +87,149 @@ for i in category:
 # In[ ]:
 
 
-#訊息傳遞區塊
-##### 基本上程式編輯都在這個function #####
+ # 訊息傳遞區塊
+ # 基本上程式編輯都在這個function
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = text=event.message.text
-    if re.match('告訴我秘密',message):
-        line_bot_api.reply_message(event.reply_token,TextSendMessage('才不告訴你哩！'))
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
+    
+
+    # 開頭觸發文字
+    if event.message.text == '我餓':
+        calories_request_message = TextSendMessage(text='今天想吃多少大卡呢~\n請輸入"XXXX大卡"')
+        line_bot_api.reply_message(event.reply_token, calories_request_message)
+
+    # 請使用者輸入大卡數
+    if "大卡" in event.message.text:
+        try:
+            calories = int(event.message.text[:-2])
+            update_calories(calories)
+
+            inform_message = TextSendMessage(text=f'您有{read_calories()}大卡，想吃哪類食物呢？')
+
+            mainMenu_flex_message = FlexSendMessage(
+                alt_text='主選單',
+                contents={
+                        "type": "bubble",
+                        "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "md",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "想吃哪一類食物呢?",
+                            "weight": "bold",
+                            "size": "lg",
+                            "gravity": "center"
+                          },
+                          {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": [
+                              {
+                                "type": "button",
+                                "action": {
+                                  "type": "message",
+                                  "label": "麵類",
+                                  "text": "麵類"
+                                },
+                                "height": "sm",
+                                "style": "secondary",
+                                "gravity": "center",
+                                "color": "#f1edff"
+                              },
+                             
+                              {
+                                "type": "button",
+                                "action": {
+                                  "type": "message",
+                                  "label": "點心",
+                                  "text": "點心"
+                                },
+                                "height": "sm",
+                                "style": "secondary",
+                                "gravity": "center",
+                                "color": "#f1edff"
+                              },
+                             
+                              {
+                                "type": "button",
+                                "action": {
+                                  "type": "message",
+                                  "label": "排餐",
+                                  "text": "排餐"
+                                },
+                                "height": "sm",
+                                "style": "secondary",
+                                "gravity": "center",
+                                "color": "#f1edff"
+                              },
+                             
+                              {
+                                "type": "button",
+                                "action": {
+                                  "type": "message",
+                                  "label": "西式特餐",
+                                  "text": "西式特餐"
+                                },
+                                "height": "sm",
+                                "style": "secondary",
+                                "gravity": "center",
+                                "color": "#f1edff"
+                              },
+                              
+                              {
+                                "type": "button",
+                                "action": {
+                                  "type": "message",
+                                  "label": "早餐",
+                                  "text": "早餐"
+                                },
+                                "height": "sm",
+                                "style": "secondary",
+                                "gravity": "center",
+                                "color": "#f1edff"
+                              },
+                              
+                              {
+                                "type": "button",
+                                "action": {
+                                  "type": "message",
+                                  "label": "盤菜、自助餐",
+                                  "text": "盤菜、自助餐"
+                                },
+                                "height": "sm",
+                                "style": "secondary",
+                                "gravity": "center",
+                                "color": "#f1edff"
+                              },
+                             
+                              {
+                                "type": "button",
+                                "action": {
+                                  "type": "message",
+                                  "label": "飯類",
+                                  "text": "飯類"
+                                },
+                                "height": "sm",
+                                "style": "secondary",
+                                "gravity": "center",
+                                "color": "#f1edff"
+                              },
+                             
+                            ]
+                          }
+                        ]
+                      }
+                    }
+            )
+         
+            line_bot_api.reply_message(event.reply_token,[inform_message, mainMenu_flex_message])
+
+        except ValueError:
+            pass
 
 #主程式
 import os
