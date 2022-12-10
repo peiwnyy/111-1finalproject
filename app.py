@@ -39,15 +39,15 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-        message = text=event.message.text
-        if re.match('小幫手在嗎',message):
-            buttons_template_message = TemplateSendMessage(
+    message = text=event.message.text
+    if re.match('小幫手在嗎',message):
+        buttons_template_message = TemplateSendMessage(
             alt_text='這個看不到',
             template=ButtonsTemplate(
-             thumbnail_image_url='https://www.lib.ntu.edu.tw/img/cm_room_img1.jpg',
-             title='在！你想幹嘛呢',
-             text='有一些功能',
-             actions=[
+            thumbnail_image_url='https://www.lib.ntu.edu.tw/img/cm_room_img1.jpg',
+            title='在！你想幹嘛呢',
+            text='有一些功能',
+            actions=[
                  URIAction(
                      label='看學餐',
                      uri='https://meals.ntu.edu.tw/restaurant'
@@ -63,7 +63,7 @@ def handle_message(event):
                    ]
                )
              )
-            line_bot_api.reply_message(event.reply_token, buttons_template_message)
+        line_bot_api.reply_message(event.reply_token, buttons_template_message)
 '''           
          elif re.match('我餓',message):
          # Flex Message Simulator網頁：https://developers.line.biz/console/fx/
@@ -250,8 +250,8 @@ def handle_message(event):
          )
              line_bot_api.reply_message(evented.reply_token, flex_message)
 '''         
-        else:
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
             
             
           
