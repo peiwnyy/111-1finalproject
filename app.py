@@ -64,19 +64,14 @@ def handle_message(event):
                )
              )
             line_bot_api.reply_message(event.reply_token, buttons_template_message)
-        else:
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
-            
-            
-        message = text=event.message.text
-        if re.match('我餓',message):
+         elif re.match('我餓',message):
          # Flex Message Simulator網頁：https://developers.line.biz/console/fx/
              flex_message = FlexSendMessage(
                  alt_text='行銷搬進大程式',
                  contents={
   "type": "bubble",
   "body": {
-    "type": "box",
+    "type": "box",        
     "layout": "vertical",
     "contents": [
       {
@@ -254,7 +249,10 @@ def handle_message(event):
          )
              line_bot_api.reply_message(evented.reply_token, flex_message)
         else:
-             line_bot_api.reply_message(evented.reply_token, TextSendMessage(text="錯了"))    
+             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
+            
+            
+          
  
  # 主程式
 import os
