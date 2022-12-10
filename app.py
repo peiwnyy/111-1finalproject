@@ -64,6 +64,7 @@ def handle_message(event):
                )
              )
             line_bot_api.reply_message(event.reply_token, buttons_template_message)
+'''           
          elif re.match('我餓',message):
          # Flex Message Simulator網頁：https://developers.line.biz/console/fx/
              flex_message = FlexSendMessage(
@@ -248,8 +249,9 @@ def handle_message(event):
 }
          )
              line_bot_api.reply_message(evented.reply_token, flex_message)
+'''         
         else:
-             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
             
             
           
