@@ -92,156 +92,22 @@ for i in category:
 #訊息傳遞區塊
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
- # 訊息傳遞區塊
- # 基本上程式編輯都在這個function
 
-@handler.add(MessageEvent, message=TextMessage)
 
-    
-line_bot_api.push_message('Uc148f9785af67639ec3b4581f49bab47',FlexSendMessage(
-                alt_text='主選單',
-                contents={
-                        "type": "bubble",
-                        "body": {
-                        "type": "box",
-                        "layout": "vertical",
-                        "spacing": "md",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "想吃哪一類食物呢?",
-                            "weight": "bold",
-                            "size": "lg",
-                            "gravity": "center"
-                          },
-                          {
-                            "type": "box",
-                            "layout": "vertical",
-                            "spacing": "sm",
-                            "contents": [
-                              {
-                                "type": "button",
-                                "action": {
-                                  "type": "message",
-                                  "label": "麵類",
-                                  "text": "麵類"
-                                },
-                                "height": "sm",
-                                "style": "secondary",
-                                "gravity": "center",
-                                "color": "#f1edff"
-                              },
-                             
-                              {
-                                "type": "button",
-                                "action": {
-                                  "type": "message",
-                                  "label": "點心",
-                                  "text": "點心"
-                                },
-                                "height": "sm",
-                                "style": "secondary",
-                                "gravity": "center",
-                                "color": "#f1edff"
-                              },
-                             
-                              {
-                                "type": "button",
-                                "action": {
-                                  "type": "message",
-                                  "label": "排餐",
-                                  "text": "排餐"
-                                },
-                                "height": "sm",
-                                "style": "secondary",
-                                "gravity": "center",
-                                "color": "#f1edff"
-                              },
-                             
-                              {
-                                "type": "button",
-                                "action": {
-                                  "type": "message",
-                                  "label": "西式特餐",
-                                  "text": "西式特餐"
-                                },
-                                "height": "sm",
-                                "style": "secondary",
-                                "gravity": "center",
-                                "color": "#f1edff"
-                              },
-                              
-                              {
-                                "type": "button",
-                                "action": {
-                                  "type": "message",
-                                  "label": "早餐",
-                                  "text": "早餐"
-                                },
-                                "height": "sm",
-                                "style": "secondary",
-                                "gravity": "center",
-                                "color": "#f1edff"
-                              },
-                              
-                              {
-                                "type": "button",
-                                "action": {
-                                  "type": "message",
-                                  "label": "盤菜、自助餐",
-                                  "text": "盤菜、自助餐"
-                                },
-                                "height": "sm",
-                                "style": "secondary",
-                                "gravity": "center",
-                                "color": "#f1edff"
-                              },
-                             
-                              {
-                                "type": "button",
-                                "action": {
-                                  "type": "message",
-                                  "label": "飯類",
-                                  "text": "飯類"
-                                },
-                                "height": "sm",
-                                "style": "secondary",
-                                "gravity": "center",
-                                "color": "#f1edff"
-                              },
-                                     {
-                                "type": "button",
-                                "action": {
-                                  "type": "message",
-                                  "label": "飲料",
-                                  "text": "飲料"
-                                },
-                                "height": "sm",
-                                "style": "secondary",
-                                "gravity": "center",
-                                "color": "#f1edff"
-                              },   
-                                {
-                                "type": "button",
-                                "action": {
-                                  "type": "message",
-                                  "label": "湯類",
-                                  "text": "湯類"
-                                },
-                                "height": "sm",
-                                "style": "secondary",
-                                "gravity": "center",
-                                "color": "#f1edff"
-                              },
-                             
-                            ]
-                          }
-                        ]
-                      }
-                    }
-            )
-         
-            #line_bot_api.reply_message(event.reply_token,[inform_message, mainMenu_flex_message])
+
+
+
+def handle_message(event):
+    message = text=event.message.text
+    for i in menu:
+        if re.match('黑胡椒麵',message):
+            reply = '您選的餐點是 黑胡椒麵，這項餐點的熱量為 474 大卡'
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(reply))
+        elif re.match('蘑菇麵',message):
+            reply = '您選的餐點是 蘑菇麵，這項餐點的熱量為 453 大卡'
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(reply))
+        else:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage('沒這東西'))
 
 
 #主程式
