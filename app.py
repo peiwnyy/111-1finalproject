@@ -39,15 +39,15 @@ def callback():
 # 基本上程式編輯都在這個function
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = text=event.message.text
-    if re.match('小幫手在嗎',message):
-        buttons_template_message = TemplateSendMessage(
-            alt_text='這個看不到',
-            template=ButtonsTemplate(
-            thumbnail_image_url='https://www.lib.ntu.edu.tw/img/cm_room_img1.jpg',
-            title='在！你想幹嘛呢',
-            text='有一些功能',
-            actions=[
+     message = text=event.message.text
+     if re.match('小幫手在嗎',message):
+         buttons_template_message = TemplateSendMessage(
+         alt_text='這個看不到',
+         template=ButtonsTemplate(
+             thumbnail_image_url='https://www.lib.ntu.edu.tw/img/cm_room_img1.jpg',
+             title='在！你想幹嘛呢',
+             text='有一些功能',
+             actions=[
                  URIAction(
                      label='看學餐',
                      uri='https://meals.ntu.edu.tw/restaurant'
@@ -59,13 +59,13 @@ def handle_message(event):
                  URIAction(
                      label='每日卡路里',
                      uri='https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=544&pid=726'
-                        )
-                   ]
-               )
-             )
-        line_bot_api.reply_message(event.reply_token, buttons_template_message)
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
+                 )
+             ]
+         )
+     )
+         line_bot_api.reply_message(event.reply_token, buttons_template_message)
+     else:
+         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
 
  # 主程式
 import os
