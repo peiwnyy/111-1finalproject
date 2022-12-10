@@ -1,1 +1,1 @@
-web: python3 main_app.py
+web: python3 basic_structure(1).py
