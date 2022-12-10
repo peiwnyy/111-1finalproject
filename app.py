@@ -64,7 +64,12 @@ def handle_message(event):
                )
              )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
 
-
-
+ # 主程式
+import os
+if __name__ == "__main__":
+        port = int(os.environ.get('PORT', 5000))
+        app.run(host='0.0.0.0', port=port)
 
