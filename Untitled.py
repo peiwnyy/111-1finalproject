@@ -91,16 +91,11 @@ for i in category:
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
-    for i in category_lst:
-        if re.match(str(i),str(message)):
-            line_bot_api.reply_message(event.reply_token,TextSendMessage('我們有：'))
-            for j in menu:
-                if j[2] == str(message)
-                line_bot_api.reply_message(event.reply_token,TextSendMessage(str(i[0])))
-    for i in menu:
-        if re.match(str(i[0]),str(message)):
-            rely_of_kcal = '您選的餐點是'+str(i[0])+'，這項餐點的熱量為'+str(i[1])+'大卡'
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(rely_of_kcal))
+    if re.match('麵類',message):
+        line_bot_api.reply_message(event.reply_token,TextSendMessage('我們有'))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage('黑胡椒麵(Black pepper noodles)'))
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
 
 #主程式
 import os
