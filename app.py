@@ -44,22 +44,21 @@ def handle_message(event):
             buttons_template_message = TemplateSendMessage(
             alt_text='這個看不到',
             template=ButtonsTemplate(
-             thumbnail_image_url='https://i.imgur.com/wpM584d.jpg',
-             title='行銷搬進大程式',
+             thumbnail_image_url='https://www.lib.ntu.edu.tw/img/cm_room_img1.jpg',
+             title='你想幹嘛',
              text='選單功能－TemplateSendMessage',
              actions=[
-                 PostbackAction(
-                     label='偷偷傳資料',
-                     display_text='檯面上',
-                     data='action=檯面下'
+                 URIAction(
+                     label='看學餐',
+                     uri='https://meals.ntu.edu.tw/restaurant'
                  ),
                  MessageAction(
-                     label='光明正大傳資料',
-                     text='我就是資料'
+                     label='我餓',
+                     text='我餓'
                  ),
                  URIAction(
-                     label='行銷搬進大程式',
-                     uri='https://marketingliveincode.com/'
+                     label='每日卡路里',
+                     uri='https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=544&pid=726'
                         )
                    ]
                )
