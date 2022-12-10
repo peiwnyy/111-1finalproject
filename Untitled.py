@@ -60,8 +60,11 @@ test = pd.read_csv('test.csv')
 
 name = []
 for i in test['品項']:
-    name.append(i)
-
+    for j in range(len(i)):
+        if i[j] == '(':
+            name.append(i[:j])
+        elif i[j] == '（':
+            name.append(i[:j])
 kcal = []
 for i in test['熱量(kcal)']:
     kcal.append(i)
@@ -69,7 +72,7 @@ for i in test['熱量(kcal)']:
 category = []
 for i in test['分類']:
     category.append(i)
-    
+
 menu = []
 for i in range(len(name)):
     menu.append([name[i], int(kcal[i]), category[i]])
@@ -91,11 +94,12 @@ for i in category:
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
-    if re.match('麵類',message):
-        line_bot_api.reply_message(event.reply_token,TextSendMessage('我們有'))
-        line_bot_api.reply_message(event.reply_token,TextSendMessage('黑胡椒麵(Black pepper noodles)'))
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
+    for i in menu:
+        if re.match(i[0],message):
+            reply = '您選的餐點是'+str(i[0])+'，這項餐點的熱量為'+str(i[1])+'大卡'
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(reply))
+        else:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage('沒這東西'))
 
 #主程式
 import os
