@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-#載入LineBot所需要的套件
 from flask import Flask, request, abort
 
 from linebot import (
@@ -42,11 +39,11 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-     message = text=event.message.text
-     if re.match('告訴我秘密',message):
-         buttons_template_message = TemplateSendMessage(
-         alt_text='這個看不到',
-         template=ButtonsTemplate(
+        message = text=event.message.text
+        if re.match('告訴我秘密',message):
+            buttons_template_message = TemplateSendMessage(
+            alt_text='這個看不到',
+            template=ButtonsTemplate(
              thumbnail_image_url='https://i.imgur.com/wpM584d.jpg',
              title='行銷搬進大程式',
              text='選單功能－TemplateSendMessage',
@@ -63,19 +60,18 @@ def handle_message(event):
                  URIAction(
                      label='行銷搬進大程式',
                      uri='https://marketingliveincode.com/'
-                 )
-             ]
-         )
-     )
-         line_bot_api.reply_message(event.reply_token, buttons_template_message)
-     else:
-         line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
+                        )
+                   ]
+               )
+             )
+            line_bot_api.reply_message(event.reply_token, buttons_template_message)
+        else:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
  # 主程式
 import os
-if name == "main":
-     port = int(os.environ.get('PORT', 5000))
-     app.run(host='0.0.0.0', port=port)
-
+if __name__ == "__main__":
+        port = int(os.environ.get('PORT', 5000))
+        app.run(host='0.0.0.0', port=port)
 
 
 
