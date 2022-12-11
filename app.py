@@ -40,33 +40,32 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
-    if re.match('告訴我秘密',message):
+    if re.match('小幫手在嗎',message):
         buttons_template_message = TemplateSendMessage(
         alt_text='這個看不到',
         template=ButtonsTemplate(
-            thumbnail_image_url='https://i.imgur.com/wpM584d.jpg',
-            title='行銷搬進大程式',
-            text='選單功能－TemplateSendMessage',
+            thumbnail_image_url='https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2022/04/21/0/16706436.jpg&x=0&y=0&sw=0&sh=0&sl=W&fw=800&exp=3600&w=930&nt=1',
+            title='在！你想幹嘛呢',
+            text='有一些功能',
             actions=[
-                PostbackAction(
-                    label='偷偷傳資料',
-                    display_text='檯面上',
-                    data='action=檯面下'
+                URIAction(
+                    label='看學餐',
+                    uri='https://meals.ntu.edu.tw/restaurant'                    
                 ),
                 MessageAction(
-                    label='光明正大傳資料',
-                    text='我就是資料'
+                    label='我餓',
+                    text='我餓'
                 ),
                 URIAction(
-                    label='行銷搬進大程式',
-                    uri='https://marketingliveincode.com/'
+                    label='每日卡路里建議',
+                    uri='https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=544&pid=726'
                 )
             ]
         )
     )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
 #主程式
 import os
 if __name__ == "__main__":
