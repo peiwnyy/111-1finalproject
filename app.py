@@ -40,6 +40,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = text=event.message.text
+    
+    #這裡是發小幫手在嗎以後會出現的選單(有總圖圖片的)
     if re.match('小幫手在嗎',message):
         buttons_template_message = TemplateSendMessage(
         alt_text='叫出選單了',
@@ -65,8 +67,9 @@ def handle_message(event):
     )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
         
+    #這裡是上一個選單選我餓以後會出現的選單(黃色的)    
     elif re.match('我餓',message):
-        # Flex Message Simulator網頁：https://developers.line.biz/console/fx/
+        # Flex Message Simulator網頁：https://developers.line.biz/console/fx/ 用這個網站做的
         flex_message = FlexSendMessage(
             alt_text='選什麼',
             contents={
