@@ -42,7 +42,7 @@ def handle_message(event):
     message = text=event.message.text
     if re.match('小幫手在嗎',message):
         buttons_template_message = TemplateSendMessage(
-        alt_text='這個看不到',
+        alt_text='叫出選單了',
         template=ButtonsTemplate(
             thumbnail_image_url='https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2022/04/21/0/16706436.jpg&x=0&y=0&sw=0&sh=0&sl=W&fw=800&exp=3600&w=930&nt=1',
             title='在！你想幹嘛呢',
