@@ -64,8 +64,198 @@ def handle_message(event):
         )
     )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
+        
+    elif re.match('我餓',message):
+        # Flex Message Simulator網頁：https://developers.line.biz/console/fx/
+        flex_message = FlexSendMessage(
+            alt_text='選什麼',
+            contents={
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "想吃什麼？",
+        "size": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "麵類",
+          "text": "麵類"
+        },
+        "style": "secondary",
+        "color": "#FFFFE0",
+        "height": "sm",
+        "gravity": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "backgroundColor": "#FFFFFF",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "點心",
+          "text": "點心"
+        },
+        "style": "secondary",
+        "color": "#FFFFE0",
+        "height": "sm",
+        "gravity": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "backgroundColor": "#FFFFFF",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "排餐",
+          "label": "排餐"
+        },
+        "style": "secondary",
+        "color": "#FFFFE0",
+        "height": "sm",
+        "gravity": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "backgroundColor": "#FFFFFF",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "西式特餐",
+          "text": "西式特餐"
+        },
+        "style": "secondary",
+        "color": "#FFFFE0",
+        "height": "sm",
+        "gravity": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "backgroundColor": "#FFFFFF",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "早餐",
+          "text": "早餐"
+        },
+        "style": "secondary",
+        "color": "#FFFFE0",
+        "height": "sm",
+        "gravity": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "backgroundColor": "#FFFFFF",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "盤菜、自助餐",
+          "text": "盤菜、自助餐"
+        },
+        "style": "secondary",
+        "color": "#FFFFE0",
+        "height": "sm",
+        "gravity": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "backgroundColor": "#FFFFFF",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "飯類",
+          "text": "飯類"
+        },
+        "style": "secondary",
+        "color": "#FFFFE0",
+        "height": "sm",
+        "gravity": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "backgroundColor": "#FFFFFF",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "飲料",
+          "text": "飲料"
+        },
+        "style": "secondary",
+        "color": "#FFFFE0",
+        "height": "sm",
+        "gravity": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "backgroundColor": "#FFFFFF",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "湯類",
+          "text": "湯類"
+        },
+        "style": "secondary",
+        "color": "#FFFFE0",
+        "height": "sm",
+        "gravity": "center"
+      }
+    ]
+  }
+}
+        )
+        line_bot_api.reply_message(event.reply_token, flex_message)        
+        
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))
+        
+ 
+        
+        
 #主程式
 import os
 if __name__ == "__main__":
