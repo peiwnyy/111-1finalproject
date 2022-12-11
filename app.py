@@ -22,7 +22,7 @@ line_bot_api.push_message('Uc148f9785af67639ec3b4581f49bab47', TextSendMessage(t
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
-'''
+    
     # get request body as text
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
@@ -34,7 +34,7 @@ def callback():
         abort(400)
 
     return 'OK'
-'''
+
 # 訊息傳遞區塊
 # 基本上程式編輯都在這個function
 @handler.add(MessageEvent, message=TextMessage)
