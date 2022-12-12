@@ -107,7 +107,7 @@ def handle_message(event):
     )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
         
-    #這裡是上一個選單選我餓以後會出現的選單(黃色的)    
+    #這裡是上一個選單選我餓以後會出現的選單(亮黃色的)    
     elif re.match('我餓',message):
         # Flex Message Simulator網頁：https://developers.line.biz/console/fx/ 用這個網站做的
         flex_message = FlexSendMessage(
