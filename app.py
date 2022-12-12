@@ -297,7 +297,7 @@ def handle_message(event):
         # Flex Message Simulator網頁：https://developers.line.biz/console/fx/ 用這個網站做的
         flex_message = FlexSendMessage(
             alt_text='選什麼',
-            contents={{
+            contents={
   "type": "bubble",
   "body": {
     "type": "box",
