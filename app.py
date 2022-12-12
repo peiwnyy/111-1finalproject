@@ -294,10 +294,435 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, flex_message)
 
                 
-
-        
-
-        
+    elif re.match('麵類',message):
+        # Flex Message Simulator網頁：https://developers.line.biz/console/fx/
+        flex_message2 = FlexSendMessage(
+            alt_text='行銷搬進大程式',
+            contents={
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "麵類",
+        "size": "lg",
+        "margin": "none",
+        "gravity": "center"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "黑胡椒麵",
+          "label": "黑胡椒麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "蘑菇麵",
+          "label": "蘑菇麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "蘑菇麵加蛋",
+          "label": "蘑菇麵加蛋"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "黑胡椒麵加蛋",
+          "label": "黑胡椒麵加蛋"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "醬燒沙茶麵加蛋",
+          "label": "醬燒沙茶麵加蛋"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "宮保雞丁麵加蛋",
+          "label": "宮保雞丁麵加蛋"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "三杯雞丁麵加蛋",
+          "label": "三杯雞丁麵加蛋"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "麻油雞麵加蛋",
+          "label": "麻油雞麵加蛋"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "鍋燒意麵",
+          "label": "鍋燒意麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "醡醬麵",
+          "label": "醡醬麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "餛飩麵",
+          "label": "餛飩麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "榨菜肉絲麵",
+          "label": "榨菜肉絲麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "雞絲麵",
+          "label": "雞絲麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "豬肉鍋燒麵",
+          "label": "豬肉鍋燒麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "蝦仁炒麵",
+          "label": "蝦仁炒麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "羊肉麵",
+          "label": "羊肉麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "香菇雞麵",
+          "label": "香菇雞麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "傳統涼麵",
+          "label": "傳統涼麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "四物雞湯麵",
+          "label": "四物雞湯麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "叉燒麵",
+          "label": "叉燒麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "牛肉麵",
+          "label": "牛肉麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "大腸蚵仔麵線",
+          "label": "大腸蚵仔麵線"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "text": "絲瓜蚌麵",
+          "label": "絲瓜蚌麵"
+        },
+        "height": "sm",
+        "style": "secondary",
+        "color": "#E3E2B4"
+      }
+    ]
+  }
+}
+        )
+        line_bot_api.reply_message(event.reply_token, flex_message2)        
         
         
     elif "麵類" in event.message.text:
