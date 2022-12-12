@@ -298,13 +298,12 @@ def handle_message(event):
         
 
         
-
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))        
         
-    if "麵類" in event.message.text:
+        
+    elif "麵類" in event.message.text:
         TextSendMessage(text='麵類有黑胡椒麵\蘑菇麵\蘑菇麵加蛋\黑胡椒麵加蛋\醬燒沙茶麵加蛋\宮保雞丁麵加蛋\三杯雞丁麵加蛋\麻油雞麵加蛋\鍋燒意麵\醡醬麵\餛飩麵\榨菜肉絲麵\雞絲麵\豬肉鍋燒麵\蝦仁炒麵\羊肉麵\香菇雞麵\傳統涼麵\四物雞湯麵 \叉燒麵 \牛肉麵\大腸蚵仔麵線\絲瓜蚌麵')
-    
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='你在叫我嗎:]'))  
       
 #主程式
 import os
