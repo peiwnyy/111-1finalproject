@@ -206,7 +206,7 @@ def handle_message(event):
                 
     elif re.match('麵類',message):
         flex_message2 = FlexSendMessage(
-            alt_text='行銷搬進大程式',
+            alt_text='麵類',
             contents=
 {
   "type": "bubble",
@@ -249,7 +249,7 @@ def handle_message(event):
         
     elif re.match('點心',message):
         flex_message3 = FlexSendMessage(
-            alt_text='行銷搬進大程式',
+            alt_text='點心',
             contents=
 {
   "type": "bubble",
@@ -293,7 +293,7 @@ def handle_message(event):
     #湯類
     elif re.match('湯類',message):
         flex_message4 = FlexSendMessage(
-            alt_text='行銷搬進大程式',
+            alt_text='湯類',
             contents=
 {
   "type": "bubble",
@@ -337,7 +337,7 @@ def handle_message(event):
     #排餐   
     elif re.match('排餐',message):
         flex_message5 = FlexSendMessage(
-            alt_text='行銷搬進大程式',
+            alt_text='排餐',
             contents=
 {
   "type": "bubble",
@@ -381,7 +381,7 @@ def handle_message(event):
     #西式特餐  
     elif re.match('西式特餐',message):
         flex_message6 = FlexSendMessage(
-            alt_text='行銷搬進大程式',
+            alt_text='西式特餐',
             contents=
 {
   "type": "bubble",
@@ -424,8 +424,7 @@ def handle_message(event):
     
     #早餐  
     elif re.match('早餐',message):
-        flex_message7 = FlexSendMessage(
-            alt_text='行銷搬進大程式',
+        flex_message7 = '早餐',
             contents=
 {
   "type": "bubble",
@@ -469,7 +468,7 @@ def handle_message(event):
     #盤菜、自助餐 
     elif re.match('盤菜、自助餐',message):
         flex_message8 = FlexSendMessage(
-            alt_text='行銷搬進大程式',
+            alt_text='盤菜、自助餐',
             contents=
 {
   "type": "bubble",
@@ -513,7 +512,7 @@ def handle_message(event):
     #飯類 
     elif re.match('飯類',message):
         flex_message9 = FlexSendMessage(
-            alt_text='行銷搬進大程式',
+            alt_text='飯類',
             contents=
 {
   "type": "bubble",
@@ -557,7 +556,7 @@ def handle_message(event):
     #飲料
     elif re.match('飲料',message):
         flex_message10 = FlexSendMessage(
-            alt_text='行銷搬進大程式',
+            alt_text='飲料',
             contents=
 {
   "type": "bubble",
