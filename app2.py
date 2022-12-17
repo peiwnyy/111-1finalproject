@@ -21,7 +21,7 @@ handler = WebhookHandler('1d52764ed6d474557dd6b589adecddac')
 line_bot_api.push_message('Uc148f9785af67639ec3b4581f49bab47', TextSendMessage(text='你可以開始了'))
 
 
-test = pd.read_csv('./app.csv')########(檔案路徑要換)
+test = pd.read_csv('test.csv')########(檔案路徑要換)
 
 name = []
 for i in test['品項']:
