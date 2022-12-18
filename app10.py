@@ -237,7 +237,7 @@ def handle_message(event):
             ,
         "height": "sm",
         "style": "secondary",
-        "color": "#E3E2B4"
+        "color": "#FFFFFF"
         }
         for i in noodel
             ]
@@ -280,7 +280,7 @@ def handle_message(event):
             ,
         "height": "sm",
         "style": "secondary",
-        "color": "#E3E2B4"
+        "color": "#FFFFFF"
         }
         for i in snack
             ]
@@ -324,7 +324,7 @@ def handle_message(event):
             ,
         "height": "sm",
         "style": "secondary",
-        "color": "#E3E2B4"
+        "color": "#FFFFFF"
         }
         for i in soup
             ]
@@ -368,7 +368,7 @@ def handle_message(event):
             ,
         "height": "sm",
         "style": "secondary",
-        "color": "#E3E2B4"
+        "color": "#FFFFFF"
         }
         for i in meal
             ]
@@ -412,7 +412,7 @@ def handle_message(event):
             ,
         "height": "sm",
         "style": "secondary",
-        "color": "#E3E2B4"
+        "color": "#FFFFFF"
         }
         for i in western_meal
             ]
@@ -456,7 +456,7 @@ def handle_message(event):
             ,
         "height": "sm",
         "style": "secondary",
-        "color": "#E3E2B4"
+        "color": "#FFFFFF"
         }
         for i in breakfast
             ]
@@ -500,7 +500,7 @@ def handle_message(event):
             ,
         "height": "sm",
         "style": "secondary",
-        "color": "#E3E2B4"
+        "color": "#FFFFFF"
         }
         for i in buffet
             ]
@@ -544,7 +544,7 @@ def handle_message(event):
             ,
         "height": "sm",
         "style": "secondary",
-        "color": "#E3E2B4"
+        "color": "#FFFFFF"
         }
         for i in rice
             ]
@@ -588,7 +588,7 @@ def handle_message(event):
             ,
         "height": "sm",
         "style": "secondary",
-        "color": "#E3E2B4"
+        "color": "#FFFFFF"
         }
         for i in beverage
             ]
